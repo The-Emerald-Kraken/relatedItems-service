@@ -1,13 +1,4 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/relatedItems', {useNewUrlParser: true});
-
-const db = mongoose.connection;
-//from https://mongoosejs.com/docs/index.html
-db.on('error', console.error.bind(console, 'connection error:'));
-
-db.once('open', function () {
-    console.log('we connected')
-});
 
 const RelatedItemSchema = new mongoose.Schema({
     product_id: Number,           //0-100

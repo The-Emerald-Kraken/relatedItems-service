@@ -1,6 +1,5 @@
 const db = require("./index.js");
 const Item = require('./Item.js');
-const mongoose = require('mongoose');
 
 const data = [
     {
@@ -28,7 +27,7 @@ const data = [
 const insertDummyProducts = () => {
     Item.create(data)
       //   .then( () => { console.log(data)})
-       .then(() => mongoose.disconnect())
+      .then(() => db.close())
       .catch( (err) => console.log(err))
 };
 
