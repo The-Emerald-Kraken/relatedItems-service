@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import axios from 'axios';
+// eslint-disable-next-line import/extensions
+import App from './components/App.jsx';
 
-ReactDOM.render(<div>HELLO FROM REACT</div>, document.getElementById('App') )
-
-export default App;
+ReactDOM.render(<App />, document.getElementById('App'));
