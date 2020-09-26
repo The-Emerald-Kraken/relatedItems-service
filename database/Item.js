@@ -12,7 +12,7 @@ const RelatedItemSchema = new mongoose.Schema({
   number_of_ratings: Number, // 0-519
   price: Number, //
   onSalePrice: Number, // number that end in .83
-  product_image: String, // url for product image
+  product_url: String, // url for product image
   onSale: Boolean, // is the item on sale T or F
 });
 
