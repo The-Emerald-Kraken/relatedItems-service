@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const mongoUri = 'mongodb://localhost/relatedItems';
 
-mongoose.connect(mongoUri, { useNewUrlParser: true });
+mongoose.connect(mongoUri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const db = mongoose.connection;
 
