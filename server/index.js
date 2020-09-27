@@ -14,7 +14,7 @@ app.use(express.static(`${__dirname}/../public`));
 
 app.get('/api/products/:id/relatedItems', (req, res) => {
   // request 10 items from the database
-  Item.find({}).limit(10)
+  Item.find({}).limit(12)
     .then((data) => {
       res.send(data);
     })
