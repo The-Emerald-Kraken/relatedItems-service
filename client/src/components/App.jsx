@@ -24,7 +24,7 @@ class App extends React.Component {
       method: 'get',
       url: '/api/products/:id/relatedItems',
     })
-      .then((data) => { this.setState({ productList: data.data }); console.log(data.data); })
+      .then((data) => { this.setState({ productList: data.data }); })
       .catch((err) => { console.log(err); });
   }
 
