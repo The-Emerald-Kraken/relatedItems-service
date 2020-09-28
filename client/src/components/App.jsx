@@ -30,9 +30,15 @@ class App extends React.Component {
 
   render() {
     const { productList } = this.state;
+    let toRender = null;
+    if (productList.length === 0) {
+      toRender = <div>LOADING</div>;
+    } else {
+      toRender = <List list={productList} />;
+    }
     return (
       <div>
-        <List list={productList} />
+        {toRender}
       </div>
     );
   }
