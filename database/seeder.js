@@ -4,8 +4,6 @@ const Item = require('./Item.js');
 
 // this function generates 100 random product objects in an array
 const generateRandomClothingItems = (input = 100) => {
-  const arrayOfOnSale = [true, false];
-
   const result = [];
 
   const arrayCreator = () => {
@@ -20,7 +18,7 @@ const generateRandomClothingItems = (input = 100) => {
         price: faker.commerce.price(),
         onSalePrice: null,
         product_url: `https://fecimagesghrsea12.s3-us-west-1.amazonaws.com/pics/image${newInput}.jpg`,
-        onSale: arrayOfOnSale[Math.floor(Math.random())],
+        onSale: (Math.random() >= 0.5),
       };
       obj.onSalePrice = Math.floor(obj.price * 0.85) - 0.16;
 
