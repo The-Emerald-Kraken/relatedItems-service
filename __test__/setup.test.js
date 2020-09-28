@@ -11,14 +11,14 @@ import List from '../client/src/components/List.jsx';
 
 Enzyme.configure({ adapter: new Adapter() });
 
-describe('App component tests', () => {
+describe('App component', () => {
   it('should render without throwing an error', () => {
     expect(shallow(<App />).contains(<div id="list-container">Bar</div>)).toBe(false);
   });
 });
 
-describe('List component tests', () => {
-  it('should render items in the List', () => {
+describe('List component', () => {
+  it('should render items', () => {
     const productList = [{
       product_id: 100,
       manufacturer: 'Morar Group',
@@ -57,5 +57,7 @@ describe('List component tests', () => {
     }];
     const wrapper = shallow(<List list={productList} />);
     expect(wrapper.text()).toContain('Morar Group');
+    expect(wrapper.text()).toContain('Tasty Cotton Chips');
+    expect(wrapper.text()).toContain('267');
   });
 });
