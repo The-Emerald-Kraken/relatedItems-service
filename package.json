@@ -19,6 +19,9 @@
       "^.+\\.[t|j]sx?$": "babel-jest"
     }
   },
+    "resolutions": {
+      "styled-components": "^5"
+    },
   "dependencies": {
     "axios": "^0.20.0",
     "babel": "^6.23.0",
@@ -36,6 +39,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "sinon": "^9.0.3",
+    "styled-components": "^5.2.0",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12"
   },
