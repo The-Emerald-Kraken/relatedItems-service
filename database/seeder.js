@@ -19,7 +19,7 @@ const generateRandomClothingItems = (input = 100) => {
         number_of_ratings: Math.floor(Math.random() * 500),
         price: faker.commerce.price(),
         onSalePrice: null,
-        product_url: `https://fecimagesghrsea12.s3-us-west-1.amazonaws.com/pics/image${newInput + 1}.jpg`,
+        product_url: `https://fecimagesghrsea12.s3-us-west-1.amazonaws.com/pics/image${newInput}.jpg`,
         onSale: arrayOfOnSale[Math.floor(Math.random())],
       };
       obj.onSalePrice = Math.floor(obj.price * 0.85) - 0.16;

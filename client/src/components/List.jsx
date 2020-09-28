@@ -5,9 +5,7 @@ function List(props) {
   const { list } = props;
   const resultList = list.map((product) => (
     <li key={product.product_id}>
-      <div id="related-item-image" src={product.product_url}>
-        {product.product_url}
-      </div>
+      <img src={product.product_url} alt="a dog" />
       <div id="related-item-manufacturer">
         {' '}
         {product.manufacturer}
