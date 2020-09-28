@@ -3,7 +3,6 @@ import React from 'react';
 
 function List(props) {
   const { list } = props;
-  console.log(list);
   const resultList = list.map((product) => {
     if (product.onSale) {
       return (
