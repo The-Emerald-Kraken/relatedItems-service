@@ -1,7 +1,7 @@
 import React from 'react';
 
 function List(props) {
-  console.log(props.list[0]);
+//   console.log(props.list[0]);
   return (
     <div id="list-container">
       <ul>
