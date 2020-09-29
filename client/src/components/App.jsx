@@ -4,7 +4,20 @@ import axios from 'axios';
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import ReactDOM from 'react-dom';
+import styled from 'styled-components';
 import List from './List.jsx';
+
+const Wrapper = styled.section`
+    font-size: 16px;
+`;
+const BorderBox = styled.div`
+    max-width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    max-height: 500px;
+`;
 
 class App extends React.Component {
   constructor(props) {
@@ -37,9 +50,17 @@ class App extends React.Component {
       toRender = <List list={productList} />;
     }
     return (
-      <div>
-        {toRender}
-      </div>
+      <Wrapper>
+        <div id="related-item">
+          <h1 id="related-item-header"> Top picks for you </h1>
+          <BorderBox>
+            <div>
+              {toRender}
+            </div>
+          </BorderBox>
+
+        </div>
+      </Wrapper>
     );
   }
 }
