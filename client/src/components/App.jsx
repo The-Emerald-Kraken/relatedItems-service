@@ -52,17 +52,25 @@ class App extends React.Component {
     return (
       <Wrapper>
         <div id="related-item">
-          <h1 id="related-item-header"> Top picks for you </h1>
+          <Header id="related-item-header"> Top picks for you </Header>
           <BorderBox>
             <div>
               {toRender}
             </div>
           </BorderBox>
-
         </div>
       </Wrapper>
     );
   }
 }
+
+const Header = styled.h1`
+font-family: Graphik,Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+font-style: normal;
+font-weight: 400;
+letter-spacing: -.016rem;
+font-size: 1.3rem;
+line-height: 2.6rem;
+`;
 
 export default App;

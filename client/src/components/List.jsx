@@ -49,30 +49,21 @@ const ManufacturerText = styled.div`
   align-items: center;
   font-weight: 400;
   letter-spacing: -.08px;
-  font-size: .7rem;
-  line-height: 1.6rem;
+  font-size: .8rem;
+  line-height: 1.1rem;
   left: 0;
   width: 100%;
   color: #292929;
-  :hover {
-    text-decoration: underline;
-    cursor: pointer;
-  }
-
 `;
 
 const ProductText = styled.span`
 font-family: Graphik,"Helvetica Neue",sans-serif;
 font-style: normal;
-font-weight: 500;
+font-weight: 400;
 letter-spacing: 0;
 font-size: 1rem;
 line-height: 1.3rem;
 margin-bottom: 0;
-:hover {
-  text-decoration: underline;
-  cursor: pointer;
-}
 `;
 
 const NormalPrice = styled.div`
@@ -88,12 +79,13 @@ const NormalPrice = styled.div`
 `;
 
 const StarStyle = styled.div`
-color: #C5C5C5;
+color: #EDF0ED;
+-webkit-text-stroke: .76px #BD7B2D;
 height: 25px;
 width: 110px;
 font-size: 15px;
 position: relative;
-text-shadow: 0 1px 0 #A2A2A2;
+float:left;
 display:inline-block;margin-right:10px;
 &:before {
   content: '★★★★★';
@@ -102,7 +94,7 @@ display:inline-block;margin-right:10px;
 &:after{
   font-size: 15px;
   content: "★★★★★";
-  color: #FFC853;
+  color: #F5CE6D;
   position: absolute;
   display: block;
   left: 0;
@@ -112,6 +104,23 @@ display:inline-block;margin-right:10px;
 }
 `;
 
+const NumberOfRatings = styled.span`
+font-family: Graphik,"Helvetica Neue",sans-serif;
+font-style: normal;
+font-weight: 300;
+letter-spacing: -.08px;
+font-size: .8rem;
+line-height: 1.6rem;
+margin-bottom: 4px;
+float:left;
+`;
+
+const HoverUnderline = styled.div`
+:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+`;
 function List(props) {
   const { list } = props;
   const resultList = list.map((product) => {
@@ -121,20 +130,23 @@ function List(props) {
           <li key={product.product_id}>
 
             <ImageSizer image={product.product_url} key={product._id.toString()} />
+            <HoverUnderline>
 
-            <ManufacturerText>
-              <div id="related-item-manufacturer">
-                {' '}
-                {product.manufacturer}
-              </div>
-            </ManufacturerText>
+              <ManufacturerText>
+                <div id="related-item-manufacturer">
+                  {' '}
+                  {product.manufacturer}
+                </div>
+              </ManufacturerText>
 
-            <ProductText>
-              <div id="related-item-product-name">
-                {' '}
-                {product.item_name}
-              </div>
-            </ProductText>
+              <ProductText>
+                <div id="related-item-product-name">
+                  {' '}
+                  {product.item_name}
+                </div>
+              </ProductText>
+
+            </HoverUnderline>
 
             <span id="related-item-rating">
 
@@ -142,11 +154,11 @@ function List(props) {
                 <StarStyle rating={product.rating} />
               </span>
 
-              <span>
+              <NumberOfRatings>
                 (
                 {product.number_of_ratings}
                 )
-              </span>
+              </NumberOfRatings>
 
             </span>
 
