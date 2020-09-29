@@ -18,6 +18,14 @@ const BorderBox = styled.div`
     padding-right: 10px;
     max-height: 500px;
 `;
+const Header = styled.h1`
+font-family: Graphik,Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+font-style: normal;
+font-weight: 400;
+letter-spacing: -.016rem;
+font-size: 1.3rem;
+line-height: 2.6rem;
+`;
 
 class App extends React.Component {
   constructor(props) {
@@ -63,14 +71,5 @@ class App extends React.Component {
     );
   }
 }
-
-const Header = styled.h1`
-font-family: Graphik,Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
-font-style: normal;
-font-weight: 400;
-letter-spacing: -.016rem;
-font-size: 1.3rem;
-line-height: 2.6rem;
-`;
 
 export default App;

@@ -13,13 +13,11 @@ const Wrap = styled.ul`
   line-height: 2rem;
   list-style: none;
 `;
-
 const ListWrap = styled.section`
-  height: 300px;
-  width: 300px;
-  padding: 16px;
+  height: 290px;
+  width: 290px;
+  padding: 13px;
 `;
-
 const ImageSizer = styled.img`
   height: 170px;
   width: 170px;
@@ -27,7 +25,6 @@ const ImageSizer = styled.img`
   background-size: cover;
   background-repeat: no-repeat;
 `;
-
 const RedText = styled.span`
   color: #c83232;
   display: inline;
@@ -36,18 +33,17 @@ const RedText = styled.span`
     font-weight: 300;
     letter-spacing: -.08px;
     font-size: .8rem;
-    line-height: 1.6rem;
+    line-height: .75rem;
     margin-bottom: 4px;
 `;
-
 const ManufacturerText = styled.div`
   font-family: Graphik,"Helvetica Neue",sans-serif;
   font-style: normal;
   color: #292929;
-  margin: 8px 0 2px;
+  margin: 0px 0 0px;
   display: flex;
   align-items: center;
-  font-weight: 400;
+  font-weight: 340;
   letter-spacing: -.08px;
   font-size: .8rem;
   line-height: 1.1rem;
@@ -55,17 +51,15 @@ const ManufacturerText = styled.div`
   width: 100%;
   color: #292929;
 `;
-
 const ProductText = styled.span`
 font-family: Graphik,"Helvetica Neue",sans-serif;
 font-style: normal;
 font-weight: 400;
 letter-spacing: 0;
 font-size: 1rem;
-line-height: 1.3rem;
+line-height: 1rem;
 margin-bottom: 0;
 `;
-
 const NormalPrice = styled.div`
   text-decoration: line-through;
   display: inline;
@@ -74,16 +68,25 @@ const NormalPrice = styled.div`
     font-weight: 300;
     letter-spacing: -.08px;
     font-size: .8rem;
-    line-height: 1.6rem;
+    line-height: .75rem;
     margin-bottom: 4px;
 `;
-
-const StarStyle = styled.div`
+const Price = styled.div`
+  display: inline;
+  font-family: Graphik,"Helvetica Neue",sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    letter-spacing: -.08px;
+    font-size: .8rem;
+    line-height: .75rem;
+    margin-bottom: 4px;
+`;
+const StarCreator = styled.div`
 color: #EDF0ED;
 -webkit-text-stroke: .76px #BD7B2D;
 height: 25px;
 width: 110px;
-font-size: 15px;
+font-size: 17px;
 position: relative;
 float:left;
 display:inline-block;margin-right:10px;
@@ -92,7 +95,7 @@ display:inline-block;margin-right:10px;
   opacity: .6;
 }
 &:after{
-  font-size: 15px;
+  font-size: 17px;
   content: "★★★★★";
   color: #F5CE6D;
   position: absolute;
@@ -103,24 +106,23 @@ display:inline-block;margin-right:10px;
   overflow: hidden;
 }
 `;
-
 const NumberOfRatings = styled.span`
 font-family: Graphik,"Helvetica Neue",sans-serif;
 font-style: normal;
 font-weight: 300;
 letter-spacing: -.08px;
 font-size: .8rem;
-line-height: 1.6rem;
+line-height: 1.9rem;
 margin-bottom: 4px;
 float:left;
 `;
-
 const HoverUnderline = styled.div`
 :hover {
   text-decoration: underline;
   cursor: pointer;
 }
 `;
+
 function List(props) {
   const { list } = props;
   const resultList = list.map((product) => {
@@ -151,7 +153,7 @@ function List(props) {
             <span id="related-item-rating">
 
               <span>
-                <StarStyle rating={product.rating} />
+                <StarCreator rating={product.rating} />
               </span>
 
               <NumberOfRatings>
@@ -183,30 +185,54 @@ function List(props) {
       );
     }
     return (
-      <li key={product.product_id}>
-        <ImageSizer image={product.product_url} />
-        <div id="related-item-manufacturer">
-          {' '}
-          {product.manufacturer}
-        </div>
-        <div id="related-item-product-name">
-          {' '}
-          {product.item_name}
-        </div>
-        <div id="related-item-rating">
-          {' '}
-          {product.rating}
-        </div>
-        <div id="related-item-number-of-ratings">
-          (
-          {product.number_of_ratings}
-          )
-        </div>
-        <div id="related-item-price">
-          $
-          {product.price}
-        </div>
-      </li>
+      <ListWrap>
+        <li key={product.product_id}>
+
+          <ImageSizer image={product.product_url} key={product._id.toString()} />
+          <HoverUnderline>
+
+            <ManufacturerText>
+              <div id="related-item-manufacturer">
+                {' '}
+                {product.manufacturer}
+              </div>
+            </ManufacturerText>
+
+            <ProductText>
+              <div id="related-item-product-name">
+                {' '}
+                {product.item_name}
+              </div>
+            </ProductText>
+
+          </HoverUnderline>
+
+          <span id="related-item-rating">
+
+            <span>
+              <StarCreator rating={product.rating} />
+            </span>
+
+            <NumberOfRatings>
+              (
+              {product.number_of_ratings}
+              )
+            </NumberOfRatings>
+
+          </span>
+
+          <div id="related-item-price">
+
+            <Price>
+              $
+              {product.price}
+              .99
+            </Price>
+
+          </div>
+
+        </li>
+      </ListWrap>
     );
   });
 
