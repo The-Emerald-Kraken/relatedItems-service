@@ -87,17 +87,29 @@ const NormalPrice = styled.div`
     margin-bottom: 4px;
 `;
 
-const StarCreator = styled.div`
-unicode-bidi: bidi-override;
-color: #c5c5c5;
-font-size: 25px;
+const StarStyle = styled.div`
+color: #C5C5C5;
 height: 25px;
-width: 100px;
-margin: 0 auto;
+width: 110px;
+font-size: 15px;
 position: relative;
-text-shadow: 0 1px 0 #a2a2a2;
-content: '★★★★';
-  opacity: .3;
+text-shadow: 0 1px 0 #A2A2A2;
+display:inline-block;margin-right:10px;
+&:before {
+  content: '★★★★★';
+  opacity: .6;
+}
+&:after{
+  font-size: 15px;
+  content: "★★★★★";
+  color: #FFC853;
+  position: absolute;
+  display: block;
+  left: 0;
+  top:0;
+  width: ${(props) => props.rating * 15 || '0'}%;
+  overflow: hidden;
+}
 `;
 
 function List(props) {
@@ -127,8 +139,7 @@ function List(props) {
             <span id="related-item-rating">
 
               <span>
-                {' '}
-                {product.rating}
+                <StarStyle rating={product.rating} />
               </span>
 
               <span>
