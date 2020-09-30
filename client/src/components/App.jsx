@@ -11,20 +11,21 @@ const Wrapper = styled.section`
     font-size: 16px;
 `;
 const BorderBox = styled.div`
-    max-width: 1200px;
-    margin-right: auto;
-    margin-left: auto;
-    padding-left: 10px;
-    padding-right: 10px;
-    max-height: 500px;
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  
 `;
 const Header = styled.h1`
-font-family: Graphik,Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
-font-style: normal;
-font-weight: 400;
-letter-spacing: -.016rem;
-font-size: 1.3rem;
-line-height: 2.6rem;
+  font-family: Graphik,Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -.016rem;
+  font-size: 1.3rem;
+  line-height: 2.6rem;
+  
 `;
 
 class App extends React.Component {

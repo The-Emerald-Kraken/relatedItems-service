@@ -6,17 +6,20 @@ import styled from 'styled-components';
 
 const Wrap = styled.ul`
   display: flex;
+  overflow: hidden;
   flex-direction: row;
   overflow: scroll;
   letter-spacing: 0;
   font-size: 1rem;
   line-height: 2rem;
   list-style: none;
+  padding: 0px;
+  height: 350px;
 `;
 const ListWrap = styled.section`
   height: 290px;
   width: 290px;
-  padding: 13px;
+  padding: 0px 10px 0px 10px;
 `;
 const ImageSizer = styled.img`
   height: 170px;
