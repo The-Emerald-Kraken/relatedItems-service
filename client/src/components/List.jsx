@@ -1,12 +1,11 @@
-/* eslint-disable no-use-before-define */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable react/prop-types */
+
 import React from 'react';
 import styled from 'styled-components';
 
 const Wrap = styled.ul`
   display: flex;
-  overflow: hidden;
   flex-direction: row;
   overflow: scroll;
   letter-spacing: 0;
@@ -15,15 +14,17 @@ const Wrap = styled.ul`
   list-style: none;
   padding: 0px;
   height: 350px;
+  scroll-behavior: smooth;
 `;
 const ListWrap = styled.section`
-  height: 290px;
-  width: 290px;
-  padding: 0px 10px 0px 10px;
+  height: 175px;
+  width: 179px;
+  padding: 7px 0px 0px 10px;
+  
 `;
 const ImageSizer = styled.img`
-  height: 170px;
-  width: 170px;
+  height: 180px;
+  width: 180px;
   background-image: url(${(props) => props.image});
   background-size: cover;
   background-repeat: no-repeat;
@@ -84,15 +85,15 @@ const Price = styled.div`
     line-height: .75rem;
     margin-bottom: 4px;
 `;
-const StarCreator = styled.div`
+const StarCreator = styled.span`
 color: #EDF0ED;
 -webkit-text-stroke: .76px #BD7B2D;
 height: 25px;
-width: 110px;
+
 font-size: 17px;
 position: relative;
 float:left;
-display:inline-block;margin-right:10px;
+
 &:before {
   content: '★★★★★';
   opacity: .6;
@@ -102,7 +103,7 @@ display:inline-block;margin-right:10px;
   content: "★★★★★";
   color: #F5CE6D;
   position: absolute;
-  display: block;
+  
   left: 0;
   top:0;
   width: ${(props) => props.rating * 15 || '0'}%;
@@ -117,7 +118,7 @@ letter-spacing: -.08px;
 font-size: .8rem;
 line-height: 1.9rem;
 margin-bottom: 4px;
-float:left;
+margin-right: 20px;
 `;
 const HoverUnderline = styled.div`
 :hover {
@@ -125,66 +126,83 @@ const HoverUnderline = styled.div`
   cursor: pointer;
 }
 `;
+const Section1 = styled.span`
+display:flex;
+a {
+  postion: absolute;
+  font-size: 3em;
+  height: 45px;
+  width: 45px;
+  z-index: 1;
+  margin: 130px 10px 0px 0px;
+  &:nth-of-type(1){
+    top: 0; bottom:0; left:0;
+  }
+}
+`;
+const Section2 = styled.span`
+display:flex;
+
+a {
+  postion: absolute;
+  color:#fff;
+  text-decoration: none;
+  height: 45px;
+  width: 50px;
+  text-align: center;
+  z-index: 1;
+  margin: 130px 0px 0px 0px;
+  border: none;
+  border-image: none;
+}
+`;
+const ArrowShowRight = styled.img`
+  background-image: url(https://fecimagesghrsea12.s3-us-west-1.amazonaws.com/pics/arrow2.png);
+  height: 50px;
+  width: 50px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  clip-path: circle(24px at center);
+`;
+const ArrowShowLeft = styled.img`
+  background-image: url(https://fecimagesghrsea12.s3-us-west-1.amazonaws.com/pics/arrow2.png);
+  height: 50px;
+  width: 50px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transform: rotate(180deg);
+  clip-path: circle(24px at center);
+`;
 
 function List(props) {
   const { list } = props;
   const resultList = list.map((product) => {
+    let salesPrice;
     if (product.onSale) {
-      return (
-        <ListWrap>
-          <li key={product.product_id}>
+      salesPrice = (
+        <div id="related-item-price">
+          <RedText>
+            $
+            {product.onSalePrice}
+            {' '}
+          </RedText>
 
-            <ImageSizer image={product.product_url} key={product._id.toString()} />
-            <HoverUnderline>
-
-              <ManufacturerText>
-                <div id="related-item-manufacturer">
-                  {' '}
-                  {product.manufacturer}
-                </div>
-              </ManufacturerText>
-
-              <ProductText>
-                <div id="related-item-product-name">
-                  {' '}
-                  {product.item_name}
-                </div>
-              </ProductText>
-
-            </HoverUnderline>
-
-            <span id="related-item-rating">
-
-              <span>
-                <StarCreator rating={product.rating} />
-              </span>
-
-              <NumberOfRatings>
-                (
-                {product.number_of_ratings}
-                )
-              </NumberOfRatings>
-
-            </span>
-
-            <div id="related-item-price">
-
-              <RedText>
-                $
-                {product.onSalePrice}
-                {' '}
-              </RedText>
-
-              <NormalPrice>
-                $
-                {product.price}
-                .99
-              </NormalPrice>
-
-            </div>
-
-          </li>
-        </ListWrap>
+          <NormalPrice>
+            $
+            {product.price}
+            .99
+          </NormalPrice>
+        </div>
+      );
+    } else {
+      salesPrice = (
+        <div id="related-item-price">
+          <Price>
+            $
+            {product.price}
+            .99
+          </Price>
+        </div>
       );
     }
     return (
@@ -209,44 +227,44 @@ function List(props) {
             </ProductText>
 
           </HoverUnderline>
-
-          <span id="related-item-rating">
-
-            <span>
-              <StarCreator rating={product.rating} />
-            </span>
+          <div>
+            <StarCreator rating={product.rating} />
 
             <NumberOfRatings>
               (
               {product.number_of_ratings}
               )
             </NumberOfRatings>
-
-          </span>
-
-          <div id="related-item-price">
-
-            <Price>
-              $
-              {product.price}
-              .99
-            </Price>
-
           </div>
-
+          {salesPrice}
         </li>
       </ListWrap>
     );
   });
 
   return (
-    <div id="list-container">
-      <ul>
-        <Wrap>
-          {resultList}
-        </Wrap>
-      </ul>
-    </div>
+    <Wrap>
+
+      <Section1 id="section1">
+        {resultList.slice(0, 6)}
+        <a href="#section2">
+          {' '}
+          <ArrowShowRight />
+          {' '}
+        </a>
+      </Section1>
+
+      <Section2 id="section2">
+        <a href="#section1">
+          {' '}
+          <ArrowShowLeft />
+          {' '}
+        </a>
+        {resultList.slice(6, resultList.Length)}
+      </Section2>
+
+    </Wrap>
+
   );
 }
 
