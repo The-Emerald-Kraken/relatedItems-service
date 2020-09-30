@@ -1,3 +1,5 @@
+/* eslint-disable no-var */
+/* eslint-disable block-scoped-var */
 /* eslint-disable no-use-before-define */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable react/prop-types */
@@ -170,62 +172,32 @@ box-shadow: 0 0.4rem 0.4rem 0 rgba(12,11,8,.2);
 function List(props) {
   const { list } = props;
   const resultList = list.map((product) => {
+    var salesPrice;
     if (product.onSale) {
-      return (
-        <ListWrap>
-          <li key={product.product_id}>
+      salesPrice = (
+        <div id="related-item-price">
+          <RedText>
+            $
+            {product.onSalePrice}
+            {' '}
+          </RedText>
 
-            <ImageSizer image={product.product_url} key={product._id.toString()} />
-            <HoverUnderline>
-
-              <ManufacturerText>
-                <div id="related-item-manufacturer">
-                  {' '}
-                  {product.manufacturer}
-                </div>
-              </ManufacturerText>
-
-              <ProductText>
-                <div id="related-item-product-name">
-                  {' '}
-                  {product.item_name}
-                </div>
-              </ProductText>
-
-            </HoverUnderline>
-
-            <span id="related-item-rating">
-
-              <span>
-                <StarCreator rating={product.rating} />
-              </span>
-
-              <NumberOfRatings>
-                (
-                {product.number_of_ratings}
-                )
-              </NumberOfRatings>
-
-            </span>
-
-            <div id="related-item-price">
-
-              <RedText>
-                $
-                {product.onSalePrice}
-                {' '}
-              </RedText>
-
-              <NormalPrice>
-                $
-                {product.price}
-                .99
-              </NormalPrice>
-
-            </div>
-
-          </li>
-        </ListWrap>
+          <NormalPrice>
+            $
+            {product.price}
+            .99
+          </NormalPrice>
+        </div>
+      );
+    } else {
+      salesPrice = (
+        <div id="related-item-price">
+          <Price>
+            $
+            {product.price}
+            .99
+          </Price>
+        </div>
       );
     }
     return (
@@ -264,17 +236,7 @@ function List(props) {
             </NumberOfRatings>
 
           </span>
-
-          <div id="related-item-price">
-
-            <Price>
-              $
-              {product.price}
-              .99
-            </Price>
-
-          </div>
-
+          { salesPrice }
         </li>
       </ListWrap>
     );
