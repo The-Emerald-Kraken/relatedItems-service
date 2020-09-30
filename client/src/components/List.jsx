@@ -19,9 +19,9 @@ const Wrap = styled.ul`
   height: 350px;
 `;
 const ListWrap = styled.section`
-  height: 290px;
-  width: 290px;
-  padding: 0px 10px 0px 10px;
+  height: 170px;
+  width: 173px;
+  padding: 0px 7px 0px 10px;
 `;
 const ImageSizer = styled.img`
   height: 170px;
@@ -86,15 +86,15 @@ const Price = styled.div`
     line-height: .75rem;
     margin-bottom: 4px;
 `;
-const StarCreator = styled.div`
+const StarCreator = styled.span`
 color: #EDF0ED;
 -webkit-text-stroke: .76px #BD7B2D;
 height: 25px;
-width: 110px;
+
 font-size: 17px;
 position: relative;
 float:left;
-display:inline-block;margin-right:10px;
+
 &:before {
   content: '★★★★★';
   opacity: .6;
@@ -104,7 +104,7 @@ display:inline-block;margin-right:10px;
   content: "★★★★★";
   color: #F5CE6D;
   position: absolute;
-  display: block;
+  
   left: 0;
   top:0;
   width: ${(props) => props.rating * 15 || '0'}%;
@@ -119,7 +119,7 @@ letter-spacing: -.08px;
 font-size: .8rem;
 line-height: 1.9rem;
 margin-bottom: 4px;
-float:left;
+margin-right: 20px;
 `;
 const HoverUnderline = styled.div`
 :hover {
@@ -167,6 +167,12 @@ background: #f9f8f6;
 box-shadow: 0 0.4rem 0.4rem 0 rgba(12,11,8,.2);
 
 
+`;
+const Section1 = styled.span`
+display:flex;
+`;
+const Section2 = styled.span`
+display:flex;
 `;
 
 function List(props) {
@@ -222,21 +228,16 @@ function List(props) {
             </ProductText>
 
           </HoverUnderline>
-
-          <span id="related-item-rating">
-
-            <span>
-              <StarCreator rating={product.rating} />
-            </span>
+          <div>
+            <StarCreator rating={product.rating} />
 
             <NumberOfRatings>
               (
               {product.number_of_ratings}
               )
             </NumberOfRatings>
-
-          </span>
-          { salesPrice }
+          </div>
+          {salesPrice}
         </li>
       </ListWrap>
     );
@@ -245,11 +246,19 @@ function List(props) {
   return (
     <div id="list-container">
 
-      <ul>
+      <ol>
         <Wrap>
-          {resultList}
+
+          <Section1>
+            {resultList.slice(0, 6)}
+          </Section1>
+
+          <Section2>
+            {resultList.slice(6, resultList.Length)}
+          </Section2>
+
         </Wrap>
-      </ul>
+      </ol>
       <LeftButton />
       <RightButton />
 
