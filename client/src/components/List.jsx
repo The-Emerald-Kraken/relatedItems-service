@@ -17,11 +17,12 @@ const Wrap = styled.ul`
   list-style: none;
   padding: 0px;
   height: 350px;
+  scroll-behavior: smooth;
 `;
 const ListWrap = styled.section`
   height: 170px;
   width: 173px;
-  padding: 0px 7px 0px 10px;
+  padding: 7px 0px 0px 10px;
 `;
 const ImageSizer = styled.img`
   height: 170px;
@@ -127,52 +128,42 @@ const HoverUnderline = styled.div`
   cursor: pointer;
 }
 `;
-const LeftButton = styled.button`
-  display: flex;
-  background: 0 0;
-  border: 0;
-  color: #fefefe;
-  margin: 220px 0px 0px 0px;
-  width: 100%;
-  max-height: 40px;
-  max-width: 40px;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  z-index: 1;
-  cursor: pointer;
-  border-radius: 50%;
-  height: 40px;
-  bottom: initial;
-  background: #f9f8f6;
-  box-shadow: 0 0.4rem 0.4rem 0 rgba(12,11,8,.2);
-`;
-const RightButton = styled.button`
-display: flex;
-border: 0;
-color: #fefefe;
-right: 0;
-margin: 220px 0px 0px 0px;
-width: 100%;
-max-height: 40px;
-max-width: 40px;
-position: absolute;
-top: 0;
-z-index: 1;
-cursor: pointer;
-border-radius: 50%;
-height: 40px;
-bottom: initial;
-background: #f9f8f6;
-box-shadow: 0 0.4rem 0.4rem 0 rgba(12,11,8,.2);
-
-
-`;
 const Section1 = styled.span`
 display:flex;
+
+a {
+  postion: absolute;
+  color:#fff;
+  text-decoration: none;
+  font-size: 3em;
+  background: rgb(0, 0, 0);
+  height: 45px;
+  width: 45px;
+  text-align: center;
+  z-index: 1;
+  border-radius: 50%;
+  margin: 130px 0px 0px 0px;
+  &:nth-of-type(1){
+    top: 0; bottom:0; left:0;
+  }
+}
 `;
 const Section2 = styled.span`
 display:flex;
+
+a {
+  postion: absolute;
+  color:#fff;
+  text-decoration: none;
+  font-size: 3em;
+  background: rgb(0, 0, 0);
+  height: 45px;
+  width: 45px;
+  text-align: center;
+  z-index: 1;
+  border-radius: 50%;
+  margin: 130px 0px 0px 0px;
+}
 `;
 
 function List(props) {
@@ -249,18 +240,26 @@ function List(props) {
       <ol>
         <Wrap>
 
-          <Section1>
+          <Section1 id="section1">
             {resultList.slice(0, 6)}
+            <a href="#section2">
+              {' '}
+              { '>' }
+              {' '}
+            </a>
           </Section1>
 
-          <Section2>
+          <Section2 id="section2">
+            <a href="#section1">
+              {' '}
+              { '<' }
+              {' '}
+            </a>
             {resultList.slice(6, resultList.Length)}
           </Section2>
 
         </Wrap>
       </ol>
-      <LeftButton />
-      <RightButton />
 
     </div>
   );
