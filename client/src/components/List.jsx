@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-=======
-/* eslint-disable no-var */
-/* eslint-disable block-scoped-var */
-/* eslint-disable no-use-before-define */
->>>>>>> 08cfe3d5445f2d2c27f9521deeb56c98f0485f62
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable react/prop-types */
 
@@ -23,16 +17,10 @@ const Wrap = styled.ul`
   scroll-behavior: smooth;
 `;
 const ListWrap = styled.section`
-<<<<<<< HEAD
   height: 175px;
   width: 179px;
   padding: 7px 0px 0px 10px;
   
-=======
-  height: 170px;
-  width: 173px;
-  padding: 0px 7px 0px 10px;
->>>>>>> 08cfe3d5445f2d2c27f9521deeb56c98f0485f62
 `;
 const ImageSizer = styled.img`
   height: 180px;
@@ -138,7 +126,6 @@ const HoverUnderline = styled.div`
   cursor: pointer;
 }
 `;
-<<<<<<< HEAD
 const Section1 = styled.span`
 display:flex;
 a {
@@ -185,64 +172,12 @@ const ArrowShowLeft = styled.img`
   background-repeat: no-repeat;
   transform: rotate(180deg);
   clip-path: circle(24px at center);
-=======
-const LeftButton = styled.button`
-  display: flex;
-  background: 0 0;
-  border: 0;
-  color: #fefefe;
-  margin: 220px 0px 0px 0px;
-  width: 100%;
-  max-height: 40px;
-  max-width: 40px;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  z-index: 1;
-  cursor: pointer;
-  border-radius: 50%;
-  height: 40px;
-  bottom: initial;
-  background: #f9f8f6;
-  box-shadow: 0 0.4rem 0.4rem 0 rgba(12,11,8,.2);
-`;
-const RightButton = styled.button`
-display: flex;
-border: 0;
-color: #fefefe;
-right: 0;
-margin: 220px 0px 0px 0px;
-width: 100%;
-max-height: 40px;
-max-width: 40px;
-position: absolute;
-top: 0;
-z-index: 1;
-cursor: pointer;
-border-radius: 50%;
-height: 40px;
-bottom: initial;
-background: #f9f8f6;
-box-shadow: 0 0.4rem 0.4rem 0 rgba(12,11,8,.2);
-
-
-`;
-const Section1 = styled.span`
-display:flex;
-`;
-const Section2 = styled.span`
-display:flex;
->>>>>>> 08cfe3d5445f2d2c27f9521deeb56c98f0485f62
 `;
 
 function List(props) {
   const { list } = props;
   const resultList = list.map((product) => {
-<<<<<<< HEAD
     let salesPrice;
-=======
-    var salesPrice;
->>>>>>> 08cfe3d5445f2d2c27f9521deeb56c98f0485f62
     if (product.onSale) {
       salesPrice = (
         <div id="related-item-price">
@@ -308,7 +243,6 @@ function List(props) {
   });
 
   return (
-<<<<<<< HEAD
     <Wrap>
 
       <Section1 id="section1">
@@ -331,27 +265,6 @@ function List(props) {
 
     </Wrap>
 
-=======
-    <div id="list-container">
-
-      <ol>
-        <Wrap>
-
-          <Section1>
-            {resultList.slice(0, 6)}
-          </Section1>
-
-          <Section2>
-            {resultList.slice(6, resultList.Length)}
-          </Section2>
-
-        </Wrap>
-      </ol>
-      <LeftButton />
-      <RightButton />
-
-    </div>
->>>>>>> 08cfe3d5445f2d2c27f9521deeb56c98f0485f62
   );
 }
 
