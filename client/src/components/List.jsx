@@ -125,6 +125,47 @@ const HoverUnderline = styled.div`
   cursor: pointer;
 }
 `;
+const LeftButton = styled.button`
+  display: flex;
+  background: 0 0;
+  border: 0;
+  color: #fefefe;
+  margin: 220px 0px 0px 0px;
+  width: 100%;
+  max-height: 40px;
+  max-width: 40px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  cursor: pointer;
+  border-radius: 50%;
+  height: 40px;
+  bottom: initial;
+  background: #f9f8f6;
+  box-shadow: 0 0.4rem 0.4rem 0 rgba(12,11,8,.2);
+`;
+const RightButton = styled.button`
+display: flex;
+border: 0;
+color: #fefefe;
+right: 0;
+margin: 220px 0px 0px 0px;
+width: 100%;
+max-height: 40px;
+max-width: 40px;
+position: absolute;
+top: 0;
+z-index: 1;
+cursor: pointer;
+border-radius: 50%;
+height: 40px;
+bottom: initial;
+background: #f9f8f6;
+box-shadow: 0 0.4rem 0.4rem 0 rgba(12,11,8,.2);
+
+
+`;
 
 function List(props) {
   const { list } = props;
@@ -241,11 +282,15 @@ function List(props) {
 
   return (
     <div id="list-container">
+
       <ul>
         <Wrap>
           {resultList}
         </Wrap>
       </ul>
+      <LeftButton />
+      <RightButton />
+
     </div>
   );
 }
