@@ -1,14 +1,11 @@
-/* eslint-disable no-var */
-/* eslint-disable block-scoped-var */
-/* eslint-disable no-use-before-define */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable react/prop-types */
+
 import React from 'react';
 import styled from 'styled-components';
 
 const Wrap = styled.ul`
   display: flex;
-  overflow: hidden;
   flex-direction: row;
   overflow: scroll;
   letter-spacing: 0;
@@ -20,13 +17,14 @@ const Wrap = styled.ul`
   scroll-behavior: smooth;
 `;
 const ListWrap = styled.section`
-  height: 170px;
-  width: 173px;
+  height: 175px;
+  width: 179px;
   padding: 7px 0px 0px 10px;
+  
 `;
 const ImageSizer = styled.img`
-  height: 170px;
-  width: 170px;
+  height: 180px;
+  width: 180px;
   background-image: url(${(props) => props.image});
   background-size: cover;
   background-repeat: no-repeat;
@@ -130,19 +128,13 @@ const HoverUnderline = styled.div`
 `;
 const Section1 = styled.span`
 display:flex;
-
 a {
   postion: absolute;
-  color:#fff;
-  text-decoration: none;
   font-size: 3em;
-  background: rgb(0, 0, 0);
   height: 45px;
   width: 45px;
-  text-align: center;
   z-index: 1;
-  border-radius: 50%;
-  margin: 130px 0px 0px 0px;
+  margin: 130px 10px 0px 0px;
   &:nth-of-type(1){
     top: 0; bottom:0; left:0;
   }
@@ -155,21 +147,37 @@ a {
   postion: absolute;
   color:#fff;
   text-decoration: none;
-  font-size: 3em;
-  background: rgb(0, 0, 0);
   height: 45px;
-  width: 45px;
+  width: 50px;
   text-align: center;
   z-index: 1;
-  border-radius: 50%;
   margin: 130px 0px 0px 0px;
+  border: none;
+  border-image: none;
 }
+`;
+const ArrowShowRight = styled.img`
+  background-image: url(https://fecimagesghrsea12.s3-us-west-1.amazonaws.com/pics/arrow2.png);
+  height: 50px;
+  width: 50px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  clip-path: circle(24px at center);
+`;
+const ArrowShowLeft = styled.img`
+  background-image: url(https://fecimagesghrsea12.s3-us-west-1.amazonaws.com/pics/arrow2.png);
+  height: 50px;
+  width: 50px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transform: rotate(180deg);
+  clip-path: circle(24px at center);
 `;
 
 function List(props) {
   const { list } = props;
   const resultList = list.map((product) => {
-    var salesPrice;
+    let salesPrice;
     if (product.onSale) {
       salesPrice = (
         <div id="related-item-price">
@@ -235,33 +243,28 @@ function List(props) {
   });
 
   return (
-    <div id="list-container">
+    <Wrap>
 
-      <ol>
-        <Wrap>
+      <Section1 id="section1">
+        {resultList.slice(0, 6)}
+        <a href="#section2">
+          {' '}
+          <ArrowShowRight />
+          {' '}
+        </a>
+      </Section1>
 
-          <Section1 id="section1">
-            {resultList.slice(0, 6)}
-            <a href="#section2">
-              {' '}
-              { '>' }
-              {' '}
-            </a>
-          </Section1>
+      <Section2 id="section2">
+        <a href="#section1">
+          {' '}
+          <ArrowShowLeft />
+          {' '}
+        </a>
+        {resultList.slice(6, resultList.Length)}
+      </Section2>
 
-          <Section2 id="section2">
-            <a href="#section1">
-              {' '}
-              { '<' }
-              {' '}
-            </a>
-            {resultList.slice(6, resultList.Length)}
-          </Section2>
+    </Wrap>
 
-        </Wrap>
-      </ol>
-
-    </div>
   );
 }
 

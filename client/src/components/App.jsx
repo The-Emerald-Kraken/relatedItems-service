@@ -25,6 +25,7 @@ const Header = styled.h1`
   letter-spacing: -.016rem;
   font-size: 1.3rem;
   line-height: 2.6rem;
+  margin-left: 17%;
   
 `;
 
@@ -60,14 +61,10 @@ class App extends React.Component {
     }
     return (
       <Wrapper>
-        <div id="related-item">
-          <Header id="related-item-header"> Top picks for you </Header>
-          <BorderBox>
-            <div>
-              {toRender}
-            </div>
-          </BorderBox>
-        </div>
+        <Header id="related-item-header"> Top picks for you </Header>
+        <BorderBox>
+          {toRender}
+        </BorderBox>
       </Wrapper>
     );
   }
