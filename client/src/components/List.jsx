@@ -18,7 +18,7 @@ const Wrap = styled.ul`
 `;
 const ListWrap = styled.section`
   height: 180px;
-  width: 187px;
+  width: 189px;
   padding: 7px 0px 0px 10px;
   
 `;
@@ -156,7 +156,16 @@ a {
   border-image: none;
 }
 `;
-const ArrowShowLeft = styled.div`
+const ArrowShowLeft = styled.svg`
+
+z-index: 9;
+`;
+const ArrowShowRight = styled.svg`
+
+z-index: 9;
+`;
+const LeftButton = styled.button`
+border: none;
 border-radius: 50%;
 height: 40px;
 bottom: initial;
@@ -165,15 +174,20 @@ width: 100%;
 max-height: 40px;
 max-width: 40px;
 position: absolute;
-z-index: 1;
+z-index: 5;
 cursor: pointer;
 background-color: white;
-box-shadow: inset 0 0 0 0.1rem #928b80;
 margin: 120px 10px 0px 0px;
-transform: rotate(180deg);
+box-shadow: 0 0.4rem 0.4rem 0 rgba(12,11,8,.2);
+transition: .15s linear;
 
+&:hover {
+  margin-top: 119px;
+  box-shadow: 0 0.5rem 0.4rem 0.1rem rgba(12,11,8,.2);
+}
 `;
-const ArrowShowRight = styled.div`
+const RightButton = styled.button`
+border: none;
 border-radius: 50%;
 height: 40px;
 bottom: initial;
@@ -185,12 +199,14 @@ position: absolute;
 z-index: 1;
 cursor: pointer;
 background-color: #f9f8f6;
-box-shadow: inset 0 0 0 0.1rem #928b80;
+box-shadow: 0 0.4rem 0.4rem 0 rgba(12,11,8,.2);
 margin: 120px 0px 0px 1170px;
-`;
-const ArrowImage = styled.img`
- height: 40px;
- width: 40px;
+transition: .15s linear;
+
+&:hover {
+  margin: 118px 0px 0px 1170px;
+  box-shadow: 0 0.5rem 0.4rem 0.1rem rgba(12,11,8,.2);
+}
 `;
 function List(props) {
   const { list } = props;
@@ -265,21 +281,25 @@ function List(props) {
 
       <a href="#section1">
         {' '}
-        <ArrowShowLeft>
+        <LeftButton>
+          <ArrowShowLeft>
 
-          <ArrowImage src="https://fecimagesghrsea12.s3-us-west-1.amazonaws.com/pics/arrow-right-solid.svg" />
+            <path d="M 7.415 11 l 3.295 -3.295 a 1 1 0 0 0 -1.417 -1.412 l -4.98 4.98 a 0.997 0.997 0 0 0 -0.025 1.429 l 5.005 5.005 a 1 1 0 1 0 1.414 -1.414 L 7.414 13 H 19 a 1 1 0 0 0 0 -2 H 7.415 Z" />
 
-        </ArrowShowLeft>
+          </ArrowShowLeft>
+        </LeftButton>
         {' '}
       </a>
 
       <a href="#section2">
         {' '}
-        <ArrowShowRight>
+        <RightButton>
+          <ArrowShowRight>
 
-          <ArrowImage src="https://fecimagesghrsea12.s3-us-west-1.amazonaws.com/pics/arrow-right-solid.svg" />
+            <path d="M 16.585 13 l -3.295 3.295 a 1 1 0 0 0 1.417 1.412 l 4.98 -4.98 a 0.997 0.997 0 0 0 0.025 -1.429 l -5.005 -5.005 a 1 1 0 0 0 -1.414 1.414 L 16.586 11 H 5 a 1 1 0 0 0 0 2 h 11.585 Z" />
 
-        </ArrowShowRight>
+          </ArrowShowRight>
+        </RightButton>
         {' '}
       </a>
 
