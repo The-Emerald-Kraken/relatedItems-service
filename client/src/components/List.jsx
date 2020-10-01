@@ -224,10 +224,10 @@ function List(props) {
       );
     }
     return (
-      <ListWrap>
-        <li key={product.product_id}>
+      <ListWrap key={product.product_id}>
+        <li>
 
-          <ImageSizer image={product.product_url} key={product._id.toString()} />
+          <ImageSizer image={product.product_url} />
           <HoverUnderline>
 
             <ManufacturerText>

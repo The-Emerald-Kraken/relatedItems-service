@@ -209,15 +209,8 @@ exports[`List component should render items 1`] = `
           <div
             id="related-item-price"
           >
-            <span
-              className="sc-hKFyIo JPyHC"
-            >
-              $
-              274.84
-               
-            </span>
             <div
-              className="sc-gKAblj eFWMLi"
+              className="sc-iCoHVE jnVIJE"
             >
               $
               324

@@ -50,15 +50,14 @@ const productList = [{
   price: 324,
   onSalePrice: 274.84,
   product_url: 'https://fecimagesghrsea12.s3-us-west-1.amazonaws.com/pics/image89.jpg',
-  onSale: true,
+  onSale: false,
   __v: 0,
   _id: 1235,
 }];
 
 describe('App component', () => {
-  it('should render without throwing an error', () => {
+  it('should render component', () => {
     expect(shallow(<App />).contains(<div id="list-container">Bar</div>)).toBe(false);
-    expect(shallow(<App />).contains(<div>LOADING</div>)).toBe(true);
     expect(shallow(<App />).contains(<div>LOADING</div>)).toBe(true);
   });
 });
