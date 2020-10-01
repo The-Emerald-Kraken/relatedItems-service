@@ -7,7 +7,7 @@ import styled from 'styled-components';
 const Wrap = styled.ul`
   display: flex;
   flex-direction: row;
-  overflow: scroll;
+  overflow: hidden;
   letter-spacing: 0;
   font-size: 1rem;
   line-height: 2rem;
@@ -17,8 +17,8 @@ const Wrap = styled.ul`
   scroll-behavior: smooth;
 `;
 const ListWrap = styled.section`
-  height: 175px;
-  width: 179px;
+  height: 180px;
+  width: 187px;
   padding: 7px 0px 0px 10px;
   
 `;
@@ -156,24 +156,42 @@ a {
   border-image: none;
 }
 `;
-const ArrowShowRight = styled.img`
-  background-image: url(https://fecimagesghrsea12.s3-us-west-1.amazonaws.com/pics/arrow2.png);
-  height: 50px;
-  width: 50px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  clip-path: circle(24px at center);
-`;
-const ArrowShowLeft = styled.img`
-  background-image: url(https://fecimagesghrsea12.s3-us-west-1.amazonaws.com/pics/arrow2.png);
-  height: 50px;
-  width: 50px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  transform: rotate(180deg);
-  clip-path: circle(24px at center);
-`;
+const ArrowShowLeft = styled.div`
+border-radius: 50%;
+height: 40px;
+bottom: initial;
+display: flex;
+width: 100%;
+max-height: 40px;
+max-width: 40px;
+position: absolute;
+z-index: 1;
+cursor: pointer;
+background-color: white;
+box-shadow: inset 0 0 0 0.1rem #928b80;
+margin: 120px 10px 0px 0px;
+transform: rotate(180deg);
 
+`;
+const ArrowShowRight = styled.div`
+border-radius: 50%;
+height: 40px;
+bottom: initial;
+display: flex;
+width: 100%;
+max-height: 40px;
+max-width: 40px;
+position: absolute;
+z-index: 1;
+cursor: pointer;
+background-color: #f9f8f6;
+box-shadow: inset 0 0 0 0.1rem #928b80;
+margin: 120px 0px 0px 1170px;
+`;
+const ArrowImage = styled.img`
+ height: 40px;
+ width: 40px;
+`;
 function List(props) {
   const { list } = props;
   const resultList = list.map((product) => {
@@ -243,27 +261,39 @@ function List(props) {
   });
 
   return (
-    <Wrap>
+    <div>
 
-      <Section1 id="section1">
-        {resultList.slice(0, 6)}
-        <a href="#section2">
-          {' '}
-          <ArrowShowRight />
-          {' '}
-        </a>
-      </Section1>
+      <a href="#section1">
+        {' '}
+        <ArrowShowLeft>
 
-      <Section2 id="section2">
-        <a href="#section1">
-          {' '}
-          <ArrowShowLeft />
-          {' '}
-        </a>
-        {resultList.slice(6, resultList.Length)}
-      </Section2>
+          <ArrowImage src="https://fecimagesghrsea12.s3-us-west-1.amazonaws.com/pics/arrow-right-solid.svg" />
 
-    </Wrap>
+        </ArrowShowLeft>
+        {' '}
+      </a>
+
+      <a href="#section2">
+        {' '}
+        <ArrowShowRight>
+
+          <ArrowImage src="https://fecimagesghrsea12.s3-us-west-1.amazonaws.com/pics/arrow-right-solid.svg" />
+
+        </ArrowShowRight>
+        {' '}
+      </a>
+
+      <Wrap>
+        <Section1 id="section1">
+          {resultList.slice(0, 6)}
+        </Section1>
+        <Section2 id="section2">
+          {resultList.slice(6, resultList.Length)}
+        </Section2>
+
+      </Wrap>
+
+    </div>
 
   );
 }
