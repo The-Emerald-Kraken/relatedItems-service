@@ -1,9 +1,9 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
 const express = require('express');
 const bodyParser = require('body-parser');
 
 const app = express();
-const port = 3004;
 
 const Item = require('../database/Item.js');
 
@@ -18,12 +18,9 @@ app.get('/api/products/:id/relatedItems', (req, res) => {
     .then((data) => {
       res.send(data);
     })
-    // eslint-disable-next-line no-unused-vars
     .catch((err) => {
       res.send(500);
     });
 });
 
-app.listen(port, () => {
-  console.log(`Example app listening at: ${port}`);
-});
+module.exports = app;

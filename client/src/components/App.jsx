@@ -48,7 +48,7 @@ class App extends React.Component {
       url: '/api/products/:id/relatedItems',
     })
       .then((data) => { this.setState({ productList: data.data }); })
-      .catch((err) => { console.log(err); });
+      .catch((err) => err);
   }
 
   render() {

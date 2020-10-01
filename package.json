@@ -10,11 +10,12 @@
   },
   "scripts": {
     "react-dev": "webpack -d --watch",
-    "server-dev": "nodemon server/index.js",
+    "server-dev": "nodemon server/server.js",
     "db:seed": "node database/seeder.js",
     "test": "jest --coverage"
   },
   "jest": {
+    "testEnvironment": "node",
     "transform": {
       "^.+\\.[t|j]sx?$": "babel-jest"
     }
@@ -38,6 +39,7 @@
     "nodemon": "^2.0.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-test-renderer": "^16.13.1",
     "sinon": "^9.0.3",
     "styled-components": "^5.2.0",
     "webpack": "^4.44.2",
@@ -59,6 +61,7 @@
     "file-loader": "^6.1.0",
     "mongodb": "^3.6.2",
     "mongoose": "^5.10.6",
-    "style-loader": "^1.2.1"
+    "style-loader": "^1.2.1",
+    "supertest": "^5.0.0"
   }
 }
