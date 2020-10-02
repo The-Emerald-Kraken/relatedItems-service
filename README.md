@@ -1,6 +1,6 @@
 # Project Name
 
-> Project description
+> This is a component from my REI replication project. This specific component is the related Items section
 
 ## Related Projects
 
