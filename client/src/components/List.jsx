@@ -1,3 +1,6 @@
+/* eslint-disable react/prefer-stateless-function */
+/* eslint-disable no-useless-constructor */
+/* eslint-disable max-len */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable react/prop-types */
 
@@ -208,6 +211,7 @@ transition: .15s linear;
   box-shadow: 0 0.5rem 0.4rem 0.1rem rgba(12,11,8,.2);
 }
 `;
+
 function List(props) {
   const { list } = props;
   const resultList = list.map((product) => {
@@ -283,9 +287,8 @@ function List(props) {
         {' '}
         <LeftButton>
           <ArrowShowLeft>
-
+eslint-disable-next-line max-len
             <path d="M 7.415 11 l 3.295 -3.295 a 1 1 0 0 0 -1.417 -1.412 l -4.98 4.98 a 0.997 0.997 0 0 0 -0.025 1.429 l 5.005 5.005 a 1 1 0 1 0 1.414 -1.414 L 7.414 13 H 19 a 1 1 0 0 0 0 -2 H 7.415 Z" />
-
           </ArrowShowLeft>
         </LeftButton>
         {' '}
@@ -295,9 +298,7 @@ function List(props) {
         {' '}
         <RightButton>
           <ArrowShowRight>
-
             <path d="M 16.585 13 l -3.295 3.295 a 1 1 0 0 0 1.417 1.412 l 4.98 -4.98 a 0.997 0.997 0 0 0 0.025 -1.429 l -5.005 -5.005 a 1 1 0 0 0 -1.414 1.414 L 16.586 11 H 5 a 1 1 0 0 0 0 2 h 11.585 Z" />
-
           </ArrowShowRight>
         </RightButton>
         {' '}
@@ -317,5 +318,121 @@ function List(props) {
 
   );
 }
+
+// class List extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       leftDisplay: 'none',
+//       rightDisplay: 'none',
+//     };
+//   }
+
+//   render() {
+//     const { list } = this.props;
+//     const resultList = list.map((product) => {
+//       let salesPrice;
+//       if (product.onSale) {
+//         salesPrice = (
+//           <div id="related-item-price">
+//             <RedText>
+//               $
+//               {product.onSalePrice}
+//               {' '}
+//             </RedText>
+
+//             <NormalPrice>
+//               $
+//               {product.price}
+//               .99
+//             </NormalPrice>
+//           </div>
+//         );
+//       } else {
+//         salesPrice = (
+//           <div id="related-item-price">
+//             <Price>
+//               $
+//               {product.price}
+//               .99
+//             </Price>
+//           </div>
+//         );
+//       }
+//       return (
+//         <ListWrap key={product.product_id}>
+//           <li>
+
+//             <ImageSizer image={product.product_url} />
+//             <HoverUnderline>
+
+//               <ManufacturerText>
+//                 <div id="related-item-manufacturer">
+//                   {' '}
+//                   {product.manufacturer}
+//                 </div>
+//               </ManufacturerText>
+
+//               <ProductText>
+//                 <div id="related-item-product-name">
+//                   {' '}
+//                   {product.item_name}
+//                 </div>
+//               </ProductText>
+
+//             </HoverUnderline>
+//             <div>
+//               <StarCreator rating={product.rating} />
+
+//               <NumberOfRatings>
+//                 (
+//                 {product.number_of_ratings}
+//                 )
+//               </NumberOfRatings>
+//             </div>
+//             {salesPrice}
+//           </li>
+//         </ListWrap>
+//       );
+//     });
+
+//     return (
+//       <div>
+
+//         <a href="#section1">
+//           {' '}
+//           <LeftButton>
+//             <ArrowShowLeft>
+//               <path d="M 7.415 11 l 3.295 -3.295 a 1 1 0 0 0 -1.417 -1.412 l -4.98 4.98 a 0.997 0.997 0 0 0 -0.025 1.429 l 5.005 5.005 a 1 1 0 1 0 1.414 -1.414 L 7.414 13 H 19 a 1 1 0 0 0 0 -2 H 7.415 Z" />
+//             </ArrowShowLeft>
+//           </LeftButton>
+//           {' '}
+//         </a>
+
+//         <a href="#section2">
+//           {' '}
+//           <RightButton>
+//             <ArrowShowRight>
+//               <path d="M 16.585 13 l -3.295 3.295 a 1 1 0 0 0 1.417 1.412 l 4.98 -4.98 a 0.997 0.997 0 0 0 0.025 -1.429 l -5.005 -5.005 a 1 1 0 0 0 -1.414 1.414 L 16.586 11 H 5 a 1 1 0 0 0 0 2 h 11.585 Z" />
+//             </ArrowShowRight>
+//           </RightButton>
+//           {' '}
+//         </a>
+
+//         <Wrap>
+//           <Section1 id="section1">
+//             {resultList.slice(0, 6)}
+//           </Section1>
+//           <Section2 id="section2">
+//             {resultList.slice(6, resultList.Length)}
+//           </Section2>
+
+//         </Wrap>
+
+//       </div>
+
+//     );
+//   }
+// }
 
 export default List;
