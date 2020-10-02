@@ -160,18 +160,26 @@ a {
 }
 `;
 const ArrowShowLeft = styled.svg`
-height: 30px;
-width: 30px;
+height: 20px;
+width: 20px;
 border-radius: 50%;
+padding-top: 7px;
+padding-left: 3px;
 z-index: 9;
+fill: grey;
 `;
 const ArrowShowRight = styled.svg`
-height: 30px;
+height: 20px;
 width: 30px;
 border-radius: 50%;
+padding-top: 7px;
+padding-left: 3px;
 z-index: 9;
+fill: grey;
+
 `;
 const LeftButton = styled.button`
+box-sizing: border-box;
 border: none;
 border-radius: 50%;
 height: 40px;
@@ -186,14 +194,19 @@ cursor: pointer;
 background-color: white;
 margin: 120px 10px 0px 0px;
 box-shadow: 0 0.4rem 0.4rem 0 rgba(12,11,8,.2);
-transition: .15s linear;
+transition: .20s linear;
+outline-color: #b7e0fa;
 
 &:hover {
   margin-top: 119px;
   box-shadow: 0 0.5rem 0.4rem 0.1rem rgba(12,11,8,.2);
+  svg {
+    fill: black;
+  }
 }
 `;
 const RightButton = styled.button`
+
 border: none;
 border-radius: 50%;
 height: 40px;
@@ -208,12 +221,21 @@ cursor: pointer;
 background-color: #f9f8f6;
 box-shadow: 0 0.4rem 0.4rem 0 rgba(12,11,8,.2);
 margin: 120px 0px 0px 1170px;
-transition: .15s linear;
+transition: .2s linear;
+outline-color: #b7e0fa;
+
 
 &:hover {
   margin: 118px 0px 0px 1170px;
   box-shadow: 0 0.5rem 0.4rem 0.1rem rgba(12,11,8,.2);
+  svg {
+    fill: black;
+  }
 }
+#:active {
+  border: 50%
+}
+
 `;
 
 function List(props) {
@@ -291,7 +313,6 @@ function List(props) {
         {' '}
         <LeftButton>
           <ArrowShowLeft>
-            eslint-disable-next-line max-len
             <path d="M 7.415 11 l 3.295 -3.295 a 1 1 0 0 0 -1.417 -1.412 l -4.98 4.98 a 0.997 0.997 0 0 0 -0.025 1.429 l 5.005 5.005 a 1 1 0 1 0 1.414 -1.414 L 7.414 13 H 19 a 1 1 0 0 0 0 -2 H 7.415 Z" />
           </ArrowShowLeft>
         </LeftButton>
@@ -309,6 +330,7 @@ function List(props) {
       </a>
 
       <Wrap>
+
         <Section1 id="section1">
           {resultList.slice(0, 6)}
         </Section1>
