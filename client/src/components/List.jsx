@@ -160,11 +160,15 @@ a {
 }
 `;
 const ArrowShowLeft = styled.svg`
-
+height: 30px;
+width: 30px;
+border-radius: 50%;
 z-index: 9;
 `;
 const ArrowShowRight = styled.svg`
-
+height: 30px;
+width: 30px;
+border-radius: 50%;
 z-index: 9;
 `;
 const LeftButton = styled.button`
@@ -287,7 +291,7 @@ function List(props) {
         {' '}
         <LeftButton>
           <ArrowShowLeft>
-eslint-disable-next-line max-len
+            eslint-disable-next-line max-len
             <path d="M 7.415 11 l 3.295 -3.295 a 1 1 0 0 0 -1.417 -1.412 l -4.98 4.98 a 0.997 0.997 0 0 0 -0.025 1.429 l 5.005 5.005 a 1 1 0 1 0 1.414 -1.414 L 7.414 13 H 19 a 1 1 0 0 0 0 -2 H 7.415 Z" />
           </ArrowShowLeft>
         </LeftButton>
