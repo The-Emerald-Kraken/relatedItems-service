@@ -6,28 +6,35 @@ exports[`List component should render items 1`] = `
     href="#section1"
   >
      
-    <div
-      className="sc-crzoUp OPoiE"
+    <button
+      className="sc-bqGHjH gIhGAv"
     >
-      <img
-        className="sc-bqGHjH fbKWsQ"
-        src="https://fecimagesghrsea12.s3-us-west-1.amazonaws.com/pics/arrow-right-solid.svg"
-      />
-    </div>
+      <svg
+        className="sc-crzoUp hDghRy"
+      >
+        eslint-disable-next-line max-len
+        <path
+          d="M 7.415 11 l 3.295 -3.295 a 1 1 0 0 0 -1.417 -1.412 l -4.98 4.98 a 0.997 0.997 0 0 0 -0.025 1.429 l 5.005 5.005 a 1 1 0 1 0 1.414 -1.414 L 7.414 13 H 19 a 1 1 0 0 0 0 -2 H 7.415 Z"
+        />
+      </svg>
+    </button>
      
   </a>
   <a
     href="#section2"
   >
      
-    <div
-      className="sc-dIsAE kpJEge"
+    <button
+      className="sc-ksluoS hhnNjD"
     >
-      <img
-        className="sc-bqGHjH fbKWsQ"
-        src="https://fecimagesghrsea12.s3-us-west-1.amazonaws.com/pics/arrow-right-solid.svg"
-      />
-    </div>
+      <svg
+        className="sc-dIsAE bFBkRd"
+      >
+        <path
+          d="M 16.585 13 l -3.295 3.295 a 1 1 0 0 0 1.417 1.412 l 4.98 -4.98 a 0.997 0.997 0 0 0 0.025 -1.429 l -5.005 -5.005 a 1 1 0 0 0 -1.414 1.414 L 16.586 11 H 5 a 1 1 0 0 0 0 2 h 11.585 Z"
+        />
+      </svg>
+    </button>
      
   </a>
   <ul
@@ -38,7 +45,7 @@ exports[`List component should render items 1`] = `
       id="section1"
     >
       <section
-        className="sc-gtssRu dlQZaj"
+        className="sc-gtssRu dQtEHJ"
       >
         <li>
           <img
@@ -101,7 +108,7 @@ exports[`List component should render items 1`] = `
         </li>
       </section>
       <section
-        className="sc-gtssRu dlQZaj"
+        className="sc-gtssRu dQtEHJ"
       >
         <li>
           <img
@@ -164,7 +171,7 @@ exports[`List component should render items 1`] = `
         </li>
       </section>
       <section
-        className="sc-gtssRu dlQZaj"
+        className="sc-gtssRu dQtEHJ"
       >
         <li>
           <img
