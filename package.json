@@ -12,7 +12,8 @@
     "react-dev": "webpack -d --watch",
     "start": "node server/server.js",
     "db:seed": "node database/seeder.js",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "builder": "webpack -d"
   },
   "jest": {
     "testEnvironment": "node",
