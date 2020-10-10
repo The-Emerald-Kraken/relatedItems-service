@@ -7,7 +7,7 @@ import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 import List from './List.jsx';
 
-const Wrapper = styled.section`
+const Wrapper = styled.div`
     font-size: 16px;
 `;
 const BorderBox = styled.div`

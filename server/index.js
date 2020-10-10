@@ -3,20 +3,23 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+// const compression = require('compression');
 
 const app = express();
 
 const Item = require('../database/Item.js');
 
+// app.use(compression());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static(`${__dirname}/../public`));
 
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
-  next();
-});
+// =======================to be deleted=======================
+// app.use((req, res, next) => {
+//   res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+//   next();
+// });
 
 app.get('/api/products/:id/relatedItems', (req, res) => {
   // request 10 items from the database
