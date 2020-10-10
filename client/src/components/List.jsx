@@ -26,9 +26,8 @@ const ListWrap = styled.section`
   
 `;
 const ImageSizer = styled.img`
-  height: 180px;
-  width: 180px;
-  background-image: url(${(props) => props.image});
+  height: 120px;
+  width: 160px;
   background-size: cover;
   background-repeat: no-repeat;
 `;
@@ -273,7 +272,7 @@ function List(props) {
       <ListWrap key={product.product_id}>
         <li>
 
-          <ImageSizer image={product.product_url} />
+          <ImageSizer src={product.product_url} alt={product.product_id} />
           <HoverUnderline>
 
             <ManufacturerText>
@@ -312,7 +311,7 @@ function List(props) {
       <a href="#section1">
         {' '}
         <LeftButton>
-          <ArrowShowLeft>
+          <ArrowShowLeft aria-label="left scroll arrow">
             <path d="M 7.415 11 l 3.295 -3.295 a 1 1 0 0 0 -1.417 -1.412 l -4.98 4.98 a 0.997 0.997 0 0 0 -0.025 1.429 l 5.005 5.005 a 1 1 0 1 0 1.414 -1.414 L 7.414 13 H 19 a 1 1 0 0 0 0 -2 H 7.415 Z" />
           </ArrowShowLeft>
         </LeftButton>
@@ -322,7 +321,7 @@ function List(props) {
       <a href="#section2">
         {' '}
         <RightButton>
-          <ArrowShowRight>
+          <ArrowShowRight aria-label="right scroll arrow">
             <path d="M 16.585 13 l -3.295 3.295 a 1 1 0 0 0 1.417 1.412 l 4.98 -4.98 a 0.997 0.997 0 0 0 0.025 -1.429 l -5.005 -5.005 a 1 1 0 0 0 -1.414 1.414 L 16.586 11 H 5 a 1 1 0 0 0 0 2 h 11.585 Z" />
           </ArrowShowRight>
         </RightButton>

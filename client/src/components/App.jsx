@@ -60,12 +60,14 @@ class App extends React.Component {
       toRender = <List list={productList} />;
     }
     return (
-      <Wrapper>
-        <Header id="related-item-header"> Top picks for you </Header>
-        <BorderBox>
-          {toRender}
-        </BorderBox>
-      </Wrapper>
+      <div>
+        <div>
+          <Header id="related-item-header"> Top picks for you </Header>
+          <BorderBox>
+            {toRender}
+          </BorderBox>
+        </div>
+      </div>
     );
   }
 }

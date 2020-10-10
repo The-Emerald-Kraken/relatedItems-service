@@ -3,13 +3,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
-// const compression = require('compression');
 
 const app = express();
 
 const Item = require('../database/Item.js');
 
-// app.use(compression());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
