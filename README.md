@@ -1,6 +1,8 @@
 # Recreational Engineer Interface
-> Also Known as R*E*I*
-> This is a component from R*E*I* application. This specific component is the related Items section, similar to what you would see in any e-commerce site (Amazon, google shopping, etc). It is a carousel gallery that accesses the database to return a list of items that other user were interested in after viewing the current product. 
+
+> Recreational Engineer InterfaceAlso Known as R.E.I. is an interactive ecommerce experience constructed with service oriented architecture, MVC and the MERN stack. MongoDB, Express, ReactJS, NodeJS.
+
+> This specific component is the related Items section, similar to what you would see in any e-commerce site (Amazon, google shopping, etc). It is a carousel gallery that accesses the database to show a list of items, that other user were interested in, after viewing the current product. 
 
 
 ## Table of Contents
