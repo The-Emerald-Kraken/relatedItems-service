@@ -23,7 +23,6 @@ Find My Furry Friend
 
 ## Endpoints
 > GET: /api/products/:id/relatedItems
->> # Login
 
 Used to retrieve 12 related items form the database.
 
@@ -39,7 +38,7 @@ Used to retrieve 12 related items form the database.
 
 ***Returned Data*** : 
 > an array of 12 objects
-`[
+> `[
   {
     product_id: 99,
     onSalePrice: 189.99,
