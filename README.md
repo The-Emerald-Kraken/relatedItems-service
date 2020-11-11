@@ -21,11 +21,44 @@
 # API DOCS
 Find My Furry Friend
 
-## Open Endpoints
-Open Endpoints require no Authentication
+## Endpoints
+> GET: /api/products/:id/relatedItems
+>> # Login
 
-* Add to lost pets in the database: `Post /api/LostForm`
-* Retrieve List of pets: `Get /api/Pets`
+Used to retrieve 12 related items form the database.
+
+**URL** : `/api/products/:id/relatedItems`
+
+**Method** : `GET`
+
+**Auth required** : NO
+
+## Success Response
+
+**Code** : `200 OK`
+
+***Returned Data*** : 
+> an array of 12 objects
+`[
+  {
+    product_id: 99,
+    onSalePrice: 189.99,
+    price: 199.99,
+    product_url: 'amazonS3.com/placeholderimagenumber',
+    manufacturer: 'Baby Gap',
+    item_name: 'random clothing item Place Holder',
+    rating: 2.7,
+    number_of_ratings: 28,
+  },
+  
+]`
+
+## Error Response
+
+**Condition** : If 'username' and 'password' combination is wrong.
+
+**Code** : `400 BAD REQUEST`
+
 
 ## Endpoints that require Authentication
 * Send SMS: `Post /leads` (this requires Twilio.Config.js to be set up )
