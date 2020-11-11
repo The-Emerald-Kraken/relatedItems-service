@@ -17,3 +17,8 @@
 > 3. Start the server via terminal with the commands npm start    ( all script commands can be found in package.json ) 
 > 4. Run webpack via terminal with the commands npm run react-dev ( all script commands can be found in package.json ) 
 > 5. Open Browser to localhost:3004                               ( port can be found in server/server.js )
+
+## Contact
+- Logan Smith - Lsmith2895@gmail.com
+- Profile     - https://github.com/Lsmith2895
+- LinkedIn    - https://www.linkedin.com/in/logansmith2895/
