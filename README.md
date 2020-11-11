@@ -18,6 +18,18 @@
 > 4. Run webpack via terminal with the commands npm run react-dev ( all script commands can be found in package.json ) 
 > 5. Open Browser to localhost:3004                               ( port can be found in server/server.js )
 
+# API DOCS
+Find My Furry Friend
+
+## Open Endpoints
+Open Endpoints require no Authentication
+
+* Add to lost pets in the database: `Post /api/LostForm`
+* Retrieve List of pets: `Get /api/Pets`
+
+## Endpoints that require Authentication
+* Send SMS: `Post /leads` (this requires Twilio.Config.js to be set up )
+
 ## Contact
 - Logan Smith - Lsmith2895@gmail.com
 - Profile     - https://github.com/Lsmith2895
