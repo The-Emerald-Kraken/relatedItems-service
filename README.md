@@ -2,28 +2,18 @@
 
 > Recreational Engineer InterfaceAlso Known as R.E.I. is an interactive ecommerce experience constructed with service oriented architecture, MVC and the MERN stack. MongoDB, Express, ReactJS, NodeJS.
 
-> This specific component is the related Items section, similar to what you would see in any e-commerce site (Amazon, google shopping, etc). It is a carousel gallery that accesses the database to show a list of items, that other user were interested in, after viewing the current product. 
+> This specific component is the related items section, similar to what you would see in any e-commerce site (Amazon, google shopping, etc). It is a carousel gallery that shows a list of items that other user were interested in. This is completed by utilizing the main products id (i.e. the originally selected item) and searches the database for the most view products with relation to the item.
 
 
 ## Table of Contents
 
 1. [Usage](#Usage)
-1. [Requirements](#requirements)
 1. [Development](#development)
 
 ## Usage
 
-> Some usage instructions
-
-## Requirements
-
-An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
-
-- Node 6.13.0
-- etc
-
-## Development
-
-### Installing Dependencies
-
-From within the root directory:
+> 1. Fork and clone the repo 
+> 2. Npm install
+> 3. Start the server via terminal with the commands npm start    ( all script commands can be found in package.json ) 
+> 4. Run webpack via terminal with the commands npm run react-dev ( all script commands can be found in package.json ) 
+> 5. Open Browser to localhost:3004                               ( port can be found in server/server.js )
