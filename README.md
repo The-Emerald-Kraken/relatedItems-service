@@ -54,13 +54,10 @@ Used to retrieve 12 related items form the database.
 
 ## Error Response
 
-**Condition** : If 'username' and 'password' combination is wrong.
+**Condition** : If database connection is faulty.
 
 **Code** : `400 BAD REQUEST`
 
-
-## Endpoints that require Authentication
-* Send SMS: `Post /leads` (this requires Twilio.Config.js to be set up )
 
 ## Contact
 - Logan Smith - Lsmith2895@gmail.com
