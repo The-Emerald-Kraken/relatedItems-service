@@ -1,13 +1,7 @@
-# Project Name
+# Recreational Engineer Interface
 
-> This is a component from my REI replication project. This specific component is the related Items section
+> This is a component from R.E.I. e-commerce application. This specific component is the related Items section, similar to what you would see in any e-commerce site (Amazon, google shopping, etc). It is a carousel gallery that accesses the database to return a list of items that other user were interested in after viewing the current product. 
 
-## Related Projects
-
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
 
 ## Table of Contents
 
@@ -31,9 +25,3 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 ### Installing Dependencies
 
 From within the root directory:
-
-```sh
-npm install -g webpack
-npm install
-```
-
